@@ -16,6 +16,6 @@
     </values>
     <values>
         <field>Service_Template_Id__c</field>
-        <value xsi:type="xsd:string"></value>
+        <value xsi:nil="true"/>
     </values>
 </CustomMetadata>

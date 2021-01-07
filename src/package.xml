@@ -4,6 +4,7 @@
     <types>
         <members>DE_CreateServiceBillingController</members>
         <members>WorkOrderClaimsHandlerV2</members>
+        <members>DE_AssignClaimsPermission</members>
         <name>ApexClass</name>
     </types>
     <types>
