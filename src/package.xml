@@ -71,5 +71,5 @@
         <members>WorkOrder.DE_CreateServiceBilling</members>
         <name>QuickAction</name>
     </types>
-    <version>47.0</version>
+    <version>50.0</version>
 </Package>
