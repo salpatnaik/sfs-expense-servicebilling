@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>DE_Effective_Total_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective Total Price</label>
+        <summarizedField>ProductConsumed.DE_Total_Effective_Amount__c</summarizedField>
+        <summaryForeignKey>ProductConsumed.WorkOrderId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <trackHistory>false</trackHistory>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Work_End__c</fullName>
+        <description>Time when the work on site is finished, also displayed in Service Report</description>
+        <externalId>false</externalId>
+        <label>Work End</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Work_Start__c</fullName>
+        <description>Start time of the work on site to be displayed in the Service Report</description>
+        <externalId>false</externalId>
+        <label>Work Start</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>DateTime</type>
+    </fields>
+</CustomObject>

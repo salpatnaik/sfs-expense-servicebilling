@@ -1,0 +1,50 @@
+<aura:component controller="DE_CreateServiceBillingController" implements="force:lightningQuickActionWithoutHeader,force:hasrecordId" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <lightning:messageChannel type="DE_SessionIDChannel__c" aura:id="msgchannel" onMessage="{!c.handleReceiveMessage}"/>
+    <lightning:messageChannel type="DE_RequestChannel__c" aura:id="rqstchannel"/>
+    <aura:attribute name="fileId" type="string"/>
+    <aura:attribute name="fileName" type="string"/>
+    <aura:attribute name="serviceBillingId" type="string"/>
+    <aura:attribute name="showSpinner" type="boolean" default="true"/>
+    <aura:attribute name="sessionId" type="string"/>
+    <aura:html tag="style">
+        .cuf-content {
+        	padding: 0 0rem !important;
+        }
+        .slds-p-around--medium {
+        	padding: 0rem !important;
+        }       
+        .slds-modal__content{
+            overflow-y:hidden !important;
+            height:unset !important;
+            max-height:unset !important;
+        }
+        .slds-modal__container{
+  		    max-width: 100% !important;
+        }
+        .slds-modal__close{
+        	display: none !important;
+        }
+    </aura:html>
+    <div class="modal-header slds-modal__header slds-size_1-of-1">
+        <h4 class="title slds-page-header__title">Generate Service Billing</h4>
+    </div>
+    
+    <div class="slds-modal__content slds-p-horizontal--x-small slds-align_absolute-center slds-size_1-of-1 slds-is-relative">
+        <div class="slds-p-vertical_small">
+            <aura:if isTrue="{!v.showSpinner}">
+                <div class="exampleHolder">
+                	<lightning:spinner alternativeText="Loading" size="large"/>
+                </div>
+                <aura:set attribute="else">
+                    <lightning:fileCard fileId="{!v.fileId}" description="{!v.fileName}"/>
+                </aura:set>
+            </aura:if>
+    	</div>
+    </div>
+    
+    <div class="modal-footer slds-modal__footer slds-size_1-of-1">
+        <lightning:button variant="Brand" class="slds-button" label="Create" onclick="{!c.handleCreate}"/>
+        <lightning:button variant="Neutral" class="slds-button" label="Cancel" onclick="{!c.handleCancel}"/>
+    </div>
+</aura:component>

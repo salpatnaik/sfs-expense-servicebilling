@@ -1,0 +1,20 @@
+<apex:page >
+    <input type="text" id="sessionid" value="{!$Api.Session_ID}" style="disply:none"/>
+    <script type="text/javascript">
+    	var messagechannel = "{!$MessageChannel.DE_RequestChannel__c}";
+    	var sessionchannel = "{!$MessageChannel.DE_SessionIDChannel__c}";
+    	var subscriptionToMC;
+       	window.onload=function()      
+    	{   
+            if (!subscriptionToMC) {
+                subscriptionToMC = sforce.one.subscribe(messagechannel, onMCPublished);
+            }            
+        }
+        function onMCPublished(message) {
+            const payload = {
+            	sessionId: document.getElementById("sessionid").value
+           	};
+            sforce.one.publish(sessionchannel, payload);
+        } 
+    </script>
+</apex:page>

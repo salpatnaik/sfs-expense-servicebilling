@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>DE_Asset_Number__c</fullName>
+        <externalId>false</externalId>
+        <label>Asset Serial Number</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DE_Total_Effective_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective Price</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Price__c</fullName>
+        <externalId>false</externalId>
+        <formula>UnitPrice *  QuantityConsumed</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Price</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Currency</type>
+    </fields>
+</CustomObject>

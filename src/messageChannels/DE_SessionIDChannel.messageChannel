@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This Lightning Message Channel sends Session Id from VF to Aura</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>Session Id for the logged in User</description>
+        <fieldName>sessionId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>Is the message send as request from aura</description>
+        <fieldName>isRequest</fieldName>
+    </lightningMessageFields>
+    <masterLabel>DE_SessionIDChannel</masterLabel>
+</LightningMessageChannel>
